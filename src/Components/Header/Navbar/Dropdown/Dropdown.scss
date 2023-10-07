@@ -1,0 +1,16 @@
+.dropdown
+{
+    top: 15%;
+    z-index: 2;
+    overflow-y: auto;
+    border-radius: 12px;
+    border-bottom: 2px solid black;
+}
+
+.dropdown-items
+{
+    margin: 1em 0;
+    img { width: 150px; }
+    &:hover { color: red; }
+    transition: 0.2s ease-in-out;
+}

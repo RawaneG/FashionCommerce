@@ -1,0 +1,26 @@
+.round-circle
+{
+    right: 0;
+    z-index: 0;
+    background-color: #132625;
+    width: 240px; height: 240px;
+}
+.heading-one { font-size: 40px; line-height: 50px; }
+.aboutUs { background-color: rgba(255, 226, 209, 0.25); padding: 120px 0; }
+.our-story
+{
+    padding: 14px 59px;
+    border: 1px solid rgba(19, 38, 37, 0.1);
+    &:hover { color: #fff; background-color: #132625; }
+    transition: color 200ms ease, background-color 200ms ease;
+}
+.story-picture
+{
+    img
+    {
+        z-index: 1;
+        max-width: 100%;
+        display: inline-block;
+        vertical-align: middle;
+    }
+}

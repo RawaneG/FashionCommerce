@@ -1,0 +1,36 @@
+section
+{
+    opacity: 1;
+    height: 83.5%;
+    h1 { font-size: 54px; font-weight: 100; }
+}
+.explore
+{
+    padding: 14px 59px;
+    border: 1px solid #132625;
+    border-color: hsla(0, 0%, 100%, 0.1);
+    transition: color 200ms ease, background-color 200ms ease;
+    &:hover { color: #132625; background-color: #fff; }
+}
+.second-child
+{
+    width: 60px;
+    height: 60px;
+    padding: 14px 59px;
+    border-color: hsla(0, 0%, 100%, 0.1);
+    background-color: transparent;
+    transition: color 200ms ease, background-color 200ms ease;
+    .fa-computer-mouse { animation: pulse-animation 1s infinite; box-shadow: 0px 0px 1px 1px #ffffff1a; }
+}
+.first-slide
+{
+    background-image: url("../../../public/img/perfume.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+// KEYFRAMES
+
+@keyframes pulse-animation { 0% { box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.508); } 100% { box-shadow: 0 0 0 20px rgba(255, 255, 255, 0); } }
