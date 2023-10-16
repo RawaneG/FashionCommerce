@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <div className="first-slide vh-100">
       <Navbar />
-      <section className="text-center pos-rel clr-white flex column circle aic jc-sa">
+      <section className="text-center pos-rel clr-white flex column circle aic jc-se">
         <div className="first-child">
           <h1 className="w-100">Organic, plant-based cosmetics.</h1>
           <a

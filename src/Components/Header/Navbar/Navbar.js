@@ -1,21 +1,24 @@
 import "./Navbar.scss";
-import Example from "./Example";
+import Menu from "./Menu/Menu.js";
 import React, { useState } from "react";
 import Dropdown from "./Dropdown/Dropdown.js";
+import ShoppingCart from "./ShoppingCart/ShoppingCart.js";
 
 const Navbar = () => {
   const [showMenu, setshowMenu] = useState(false);
-
-  function handleClick() {
+  const handleClick = () =>
     showMenu === false ? setshowMenu(true) : setshowMenu(false);
-  }
+
+  const [shoppingCartOpen, setShoppingCartOpen] = useState(false);
+  const handleShoppingCartToggle = () =>
+    setShoppingCartOpen((prevOpen) => !prevOpen);
 
   return (
     <nav className="navBar m0 flex aic jc-se clr-white navClicked">
       <div className="w-25 flex jc-sa aic">
         <label className="hamburger pointer flex jcc aic">
           <input type="checkbox" />
-          <Example />
+          <Menu />
         </label>
         <span className="flex jc-se aic w-50 pointer" onClick={handleClick}>
           <span>Catalogue</span>
@@ -29,11 +32,18 @@ const Navbar = () => {
       <div className="w-50 flex jcc aic">
         <span>LOGO</span>
       </div>
-      <div className="header-icons w-25 flex jc-sa aic">
+      <div
+        className="header-icons w-25 flex jc-sa aic"
+        onClick={handleShoppingCartToggle}
+      >
         <span className="pointer">Panier ( 0 )</span>
         <i className="fas fa-magnifying-glass pointer"></i>
       </div>
       {showMenu ? <Dropdown /> : null}
+      <ShoppingCart
+        state={shoppingCartOpen}
+        toggleShoppingCart={handleShoppingCartToggle}
+      />
     </nav>
   );
 };
