@@ -103,7 +103,6 @@ body
   line-height: 30px;
   margin: 0; padding: 0;
   background-color: #132625;
-  //  background-color: #fff;
   -webkit-font-smoothing: antialiased;
   font-family: 'Sorts Mill Goudy', sans-serif;
 }
@@ -118,7 +117,7 @@ body
   background: #fff;
 }
 
-button {
+.menu-button {
   position: absolute;
   top: 18px;
   left: 28px;
@@ -132,24 +131,25 @@ button {
   background: transparent;
 }
 
-ul, li { margin: 0; padding: 0; }
+.menu-ul, .menu-ul li { margin: 0; padding: 0; }
 
-ul {
+.menu-ul
+{
   position: absolute;
   left: 38%;
   top: 60px;
   width: 50%;
   z-index: 999;
   padding: 25px;
-}
-
-li {
-  display: flex;
-  cursor: pointer;
-  width: 100%;
-  list-style: none;
-  align-items: center;
-  margin-bottom: 1.5em;
+  li
+  {
+    display: flex;
+    cursor: pointer;
+    width: 100%;
+    list-style: none;
+    align-items: center;
+    margin-bottom: 1.5em;
+  }
 }
 
 .icon-placeholder {
@@ -181,4 +181,34 @@ li {
   align-items: center;
   justify-content: center;
   background: rgba(0, 0, 0, 0.4);
+}
+
+.slide-in,.slide-out {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  height: 100vh;
+  background: #132625;
+}
+.slide-out { transform-origin: top; }
+.slide-in { transform-origin: bottom; }
+
+.link--white::before { content: ""; background-color: #FFF; }
+.link--black::before { content: ""; background-color: #000; }
+
+.link--white::before, .link--black::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
+}
+.link--white:hover:before, .link--black:hover:before
+{
+  visibility: visible; width: 100%;
 }

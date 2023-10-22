@@ -2,75 +2,61 @@ import "./Footer.scss";
 import React from "react";
 
 const Footer = () => {
+  const footerTitles = [
+    { id: 1, name: "Hair", links: ["Body", "Hair", "Hair", "Products"] },
+    { id: 2, name: "Info", links: ["Body", "Hair", "Hair", "Products"] },
+    { id: 3, name: "Contact", links: ["Body", "Hair", "Hair", "Products"] },
+  ];
+  const socials = [
+    { id: 1, icon: "fab fa-twitter", name: "Twitter" },
+    { id: 2, icon: "fab fa-whatsapp", name: "Whatsapp" },
+    { id: 3, icon: "fab fa-facebook", name: "Facebook" },
+    { id: 4, icon: "fab fa-instagram", name: "Instagram" },
+  ];
   return (
     <footer className="bg-white min-vh-100">
       <article className="text-center fweight-bold">LOGO</article>
       <section className="lists m-auto w-80 flex jc-se aic text-center">
-        <div className="store">
-          <h6 className="kurona fsize-11 fweight-400 spacing uppercase">
-            Store
-          </h6>
-          <a href="#" className="footer-link no-decoration d-block clr-black">
-            All Products
-          </a>
-          <a href="#" className="footer-link no-decoration d-block clr-black">
-            Body
-          </a>
-          <a href="#" className="footer-link no-decoration d-block clr-black">
-            Hair
-          </a>
-          <a href="#" className="footer-link no-decoration d-block clr-black">
-            Hands
-          </a>
-        </div>
-        <div className="contact">
-          <h6 className="kurona fsize-11 fweight-400 spacing uppercase">
-            Contact
-          </h6>
-          <a href="#" className="footer-link no-decoration d-block clr-black">
-            All Products
-          </a>
-          <a href="#" className="footer-link no-decoration d-block clr-black">
-            Body
-          </a>
-          <a href="#" className="footer-link no-decoration d-block clr-black">
-            Hair
-          </a>
-          <a href="#" className="footer-link no-decoration d-block clr-black">
-            Hands
-          </a>
-        </div>
-        <div className="info">
-          <h6 className="kurona fsize-11 fweight-400 spacing uppercase">
-            Info
-          </h6>
-          <a href="#" className="footer-link no-decoration d-block clr-black">
-            All Products
-          </a>
-          <a href="#" className="footer-link no-decoration d-block clr-black">
-            Body
-          </a>
-          <a href="#" className="footer-link no-decoration d-block clr-black">
-            Hair
-          </a>
-          <a href="#" className="footer-link no-decoration d-block clr-black">
-            Hands
-          </a>
-        </div>
+        {footerTitles.map((title) => {
+          return (
+            <div key={title.id}>
+              <h6 className="kurona fsize-11 fweight-400 spacing uppercase">
+                {title.name}
+              </h6>
+              {title.links.map((link, index) => {
+                return (
+                  <a
+                    href="#"
+                    key={index}
+                    className="footer-link no-decoration d-block clr-black pos-rel link--black"
+                  >
+                    {link}
+                  </a>
+                );
+              })}
+            </div>
+          );
+        })}
       </section>
       <div className="actual-footer flex jc-se aic">
         <div className="intel w-50 text-center flex jc-se aic">
-          <div>@ Copyright</div>
           <div>
-            Made by <b>Rawane Sow</b>
+            Made by{" "}
+            <b className="pos-rel link--black cursor-pointer">Rawane Sow</b>
           </div>
         </div>
-        <div className="social w-50 text-center flex jc-se aic">
-          <div className="twitter">Twitter</div>
-          <div className="whatsapp">Whatsapp</div>
-          <div className="instagram">Facebook</div>
-          <div className="instagram">Instagram</div>
-        </div>
+        {socials.map((social) => {
+          return (
+            <div
+              key={social.id}
+              className="social w-50 text-center flex jc-se aic"
+            >
+              <div className="twitter pos-rel link--black cursor-pointer">
+                {social.name}
+              </div>
+            </div>
+          );
+        })}
       </div>
     </footer>
   );

@@ -19,7 +19,7 @@ const HorizontalScrollCarousel = () => {
 
   return (
     <section ref={targetRef} className="relative h-[300vh] bg-white my-10">
-      <h1 className="text-center">Pour Lui</h1>
+      <h1 className="text-center cursor-pointer">Pour lui</h1>
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
         <motion.div style={{ x }} className="flex gap-4 cursor-pointer">
           {cards.map((card) => {
@@ -46,11 +46,7 @@ const Card = ({ card }) => {
         }}
         className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110"
       ></div>
-      <div className="absolute inset-0 z-10 grid place-content-center">
-        <p className="bg-gradient-to-br from-white/20 to-white/0 p-8 text-6xl font-black uppercase text-white backdrop-blur-lg">
-          {card.title}
-        </p>
-      </div>
+      <div className="absolute inset-0 z-10 grid place-content-center"></div>
     </div>
   );
 };

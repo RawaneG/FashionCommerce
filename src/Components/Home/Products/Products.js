@@ -23,7 +23,7 @@ const Products = () => {
         <h2 className="key-product fweight-400">Produits en Vedette</h2>
         <a
           href="#"
-          className="shop-all kurona uppercase no-decoration clr-black fsize-11 fweight-400 fstyle-normal spacing-1"
+          className="shop-all kurona uppercase no-decoration clr-black fsize-11 fweight-400 fstyle-normal spacing-1 pos-rel link--black"
         >
           Shop all
         </a>

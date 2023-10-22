@@ -1,14 +1,22 @@
 import "./App.scss";
 import React from "react";
-import { Header, Footer, Home } from "./Components";
+import { AnimatePresence } from "framer-motion";
+import { useLocation, Routes, Route } from "react-router-dom";
+import { Footer, Home, Shop, Navbar } from "./Components";
 
 function App() {
+  const location = useLocation();
   return (
-    <div>
-      <Header />
-      <Home />
+    <>
+      {location.pathname === "/" ? null : <Navbar />}
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route index element={<Home />} />
+          <Route path="/products" element={<Shop />} />
+        </Routes>
+      </AnimatePresence>
       <Footer />
-    </div>
+    </>
   );
 }
 

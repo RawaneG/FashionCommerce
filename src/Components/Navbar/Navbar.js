@@ -1,5 +1,6 @@
 import "./Navbar.scss";
 import Menu from "./Menu/Menu.js";
+import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import Dropdown from "./Dropdown/Dropdown.js";
 import ShoppingCart from "./ShoppingCart/ShoppingCart.js";
@@ -20,7 +21,10 @@ const Navbar = () => {
           <input type="checkbox" />
           <Menu />
         </label>
-        <span className="flex jc-se aic w-50 pointer" onClick={handleClick}>
+        <span
+          className="flex jc-se aic w-50 pointer pos-rel link--white"
+          onClick={handleClick}
+        >
           <span>Catalogue</span>
           {!showMenu ? (
             <i className="fas fa-caret-down"></i>
@@ -29,14 +33,16 @@ const Navbar = () => {
           )}
         </span>
       </div>
-      <div className="w-50 flex jcc aic">
+      <Link to="/" className="w-50 flex jcc aic">
         <span>LOGO</span>
-      </div>
-      <div
-        className="header-icons w-25 flex jc-sa aic"
-        onClick={handleShoppingCartToggle}
-      >
-        <span className="pointer">Panier ( 0 )</span>
+      </Link>
+      <div className="header-icons w-25 flex jc-sa aic">
+        <span
+          className="pointer pos-rel link--white"
+          onClick={handleShoppingCartToggle}
+        >
+          Panier ( 0 )
+        </span>
         <i className="fas fa-magnifying-glass pointer"></i>
       </div>
       {showMenu ? <Dropdown /> : null}

@@ -1,5 +1,6 @@
 import * as React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const variants = {
   open: {
@@ -16,8 +17,9 @@ const variants = {
   },
 };
 
-const titles = ["Home", "Nos Produits", "A Propos de nous", "Blog", "Contact"];
+const links = ["/", "/products", "/about", "/blog", "/contact"];
 const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
+const titles = ["Home", "Nos Produits", "A Propos de nous", "Blog", "Contact"];
 
 export const MenuItem = ({ i }) => {
   const style = { border: `2px solid ${colors[i]}` };
@@ -28,7 +30,9 @@ export const MenuItem = ({ i }) => {
       whileTap={{ scale: 0.95 }}
     >
       <div className="icon-placeholder" style={style} />
-      <h4 className="text-placeholder">{titles[i]}</h4>
+      <Link className="text-placeholder" to={links[i]}>
+        {titles[i]}
+      </Link>
     </motion.li>
   );
 };
