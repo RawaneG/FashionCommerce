@@ -1,11 +1,9 @@
 import React from "react";
-import Men from "./Men/Men.js";
-import Women from "./Women/Women.js";
 import Quote from "./Quote/Quote.js";
-import Header from "./Header/Header.js";
 import Social from "./Social/Social.js";
-import AboutUs from "./AboutUs/AboutUs.js";
 import transition from "../../transition.js";
+import Header from "./Header/Header.js";
+import AboutUs from "./AboutUs/AboutUs.js";
 import Products from "./Products/Products.js";
 
 const Home = () => {
@@ -15,8 +13,6 @@ const Home = () => {
       <Products />
       <AboutUs />
       <Quote />
-      <Men />
-      <Women />
       <Social />
     </section>
   );

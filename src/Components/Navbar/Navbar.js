@@ -36,14 +36,13 @@ const Navbar = () => {
       <Link to="/" className="w-50 flex jcc aic">
         <span>LOGO</span>
       </Link>
-      <div className="header-icons w-25 flex jc-sa aic">
+      <div className="header-icons w-25 flex jcc aic">
         <span
           className="pointer pos-rel link--white"
           onClick={handleShoppingCartToggle}
         >
           Panier ( 0 )
         </span>
-        <i className="fas fa-magnifying-glass pointer"></i>
       </div>
       {showMenu ? <Dropdown /> : null}
       <ShoppingCart

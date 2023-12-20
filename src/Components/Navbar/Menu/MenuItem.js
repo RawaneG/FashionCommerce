@@ -13,13 +13,13 @@ const variants = {
     y: 50,
     opacity: 0,
     display: "none",
-    transition: { y: { stiffness: 1000 } },
+    transition: { y: { stiffness: 1000, velocity: -100 } },
   },
 };
 
-const links = ["/", "/products", "/about", "/blog", "/contact"];
-const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
-const titles = ["Home", "Nos Produits", "A Propos de nous", "Blog", "Contact"];
+const links = ["/", "/products", "/about", "/contact"];
+const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#4400FF"];
+const titles = ["Home", "Nos Produits", "A Propos de nous", "Contact"];
 
 export const MenuItem = ({ i }) => {
   const style = { border: `2px solid ${colors[i]}` };

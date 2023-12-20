@@ -1,6 +1,6 @@
 .dropdown
 {
-    top: 15%;
+    top: 12.5%;
     z-index: 2;
     overflow-y: auto;
     border-radius: 12px;
@@ -11,6 +11,5 @@
 {
     margin: 1em 0;
     img { width: 150px; }
-    &:hover { color: red; }
     transition: 0.2s ease-in-out;
 }

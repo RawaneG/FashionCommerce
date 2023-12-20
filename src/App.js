@@ -8,7 +8,7 @@ function App() {
   const location = useLocation();
   return (
     <>
-      {location.pathname === "/" ? null : <Navbar />}
+      {location.pathname === "/" ? null : <Navbar className="main-color" />}
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route index element={<Home />} />

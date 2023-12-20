@@ -18,7 +18,6 @@ const AboutUs = () => {
   );
 
   const imageValue = useTransform(scrollYProgress, [0, 1], ["-100%", "0%"]);
-
   const topShadowValue = useTransform(
     scrollYProgress,
     [0, 1],
@@ -26,7 +25,10 @@ const AboutUs = () => {
   );
 
   return (
-    <section className="aboutUs flex jc-se bg-white" ref={containerRef}>
+    <section
+      className="aboutUs flex jc-se bg-white overflow-hidden"
+      ref={containerRef}
+    >
       <div className="story-text text-center w-40 min-vh-100 flex column aic jcc m0 p0">
         <h3 className="heading-one fweight-400">
           Organic, plant-based cosmetics
@@ -45,7 +47,7 @@ const AboutUs = () => {
       <div className="img-container">
         <motion.div className="img-inner" style={{ translateX: imageValue }}>
           <motion.div
-            className="bottom-shadow"
+            className="about-bottom-shadow"
             style={{ translateX: bottomShadowValue }}
           />
           <div className="flex items-center justify-center">
@@ -57,7 +59,7 @@ const AboutUs = () => {
             <motion.div className="round-circle circle pos-abs" />
           </div>
           <motion.div
-            className="top-shadow"
+            className="about-top-shadow"
             style={{ translateX: topShadowValue }}
           />
         </motion.div>

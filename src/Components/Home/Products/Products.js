@@ -39,8 +39,8 @@ const Products = () => {
             <img
               src="../img/product_1.png"
               alt="product_1"
-              height={425}
-              width={340}
+              height={300}
+              width={250}
               className="pointer"
             />
             <h4 className="product_name text-center fweight-400 fstyle-normal spacing-1">
@@ -56,8 +56,8 @@ const Products = () => {
             <img
               src="../img/product_2.png"
               alt="product_2"
-              height={425}
-              width={340}
+              height={300}
+              width={250}
               className="pointer"
             />
             <h4 className="product_name text-center fweight-400 fstyle-normal spacing-1">
@@ -73,8 +73,8 @@ const Products = () => {
             <img
               src="../img/product_3.png"
               alt="product_3"
-              height={425}
-              width={340}
+              height={300}
+              width={250}
               className="pointer"
             />
             <h4 className="product_name text-center fweight-400 fstyle-normal spacing-1">

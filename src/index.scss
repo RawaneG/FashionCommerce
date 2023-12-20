@@ -61,11 +61,12 @@
 .aic { align-items: center; }
 .jcc { justify-content: center; }
 .ai-fe { align-items: flex-end; }
-.column { flex-direction: column; }
 .ai-fs { align-items: flex-start; }
+.column { flex-direction: column; }
 .jc-se { justify-content: space-evenly; }
 .jc-sa { justify-content: space-around; }
 .jc-sb { justify-content: space-between; }
+
 /*************************** Font *********************************/
 
 .fsize-11 { font-size: 11px; }
@@ -78,27 +79,29 @@
 
 .text-center { text-align: center; }
 .spacing-1 { letter-spacing: 0.1em; }
-.uppercase { text-transform: uppercase; }
 .no-decoration { text-decoration: none; }
+.uppercase { text-transform: uppercase; }
 
 /*************************** Element Formatting ******************************/
 
 .pointer { cursor: pointer; }
+.pos-rel { position: relative; }
 .circle { border-radius: 50%; }
 .pos-abs { position: absolute; }
-.pos-rel { position: relative; }
 
 /*************************** Color & Backgrounds ******************************/
 
 .clr-black { color: black; }
 .clr-white { color: white; }
-.b-white { border: 2px solid white; }
 .b-black { border: 2px solid black; }
-.bg-white { background-color: white; }
+.b-white { border: 2px solid white; }
 .bg-black { background-color: black; }
+.bg-white { background-color: white; }
+.main-color { background-color: #132625; }
 
 body
 {
+  z-index: 25;
   font-size: 20px;
   line-height: 30px;
   margin: 0; padding: 0;
@@ -119,7 +122,7 @@ body
 
 .menu-button {
   position: absolute;
-  top: 18px;
+  top: 9.5px;
   left: 28px;
   width: 50px;
   border: none;
@@ -137,15 +140,15 @@ body
 {
   position: absolute;
   left: 38%;
-  top: 60px;
+  top: 25%;
   width: 50%;
   z-index: 999;
   padding: 25px;
   li
   {
+    width: 100%;
     display: flex;
     cursor: pointer;
-    width: 100%;
     list-style: none;
     align-items: center;
     margin-bottom: 1.5em;
@@ -183,17 +186,16 @@ body
   background: rgba(0, 0, 0, 0.4);
 }
 
-.slide-in,.slide-out {
+.slide-in,.slide-out
+{
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 999;
   height: 100vh;
-  background: #132625;
+  transform-origin: top; background: #132625;
 }
-.slide-out { transform-origin: top; }
-.slide-in { transform-origin: bottom; }
 
 .link--white::before { content: ""; background-color: #FFF; }
 .link--black::before { content: ""; background-color: #000; }
@@ -208,7 +210,4 @@ body
   visibility: hidden;
   transition: all 0.2s ease-in-out;
 }
-.link--white:hover:before, .link--black:hover:before
-{
-  visibility: visible; width: 100%;
-}
+.link--white:hover:before, .link--black:hover:before { visibility: visible; width: 100%; }
